@@ -19,8 +19,8 @@ My Thought Process for Exercise 1:
 	-Then I want to divide that total by the total (.length)
 	-Then I want to return the answer in a string "The average price is " + (answer)""
 ========================================================================*/
-var priceArray = items.map( function (itemPrice, i, array) {
-	return itemPrice.price;
+var priceArray = items.map( function (item, i, array) {
+	return item.price;
 });
 
 var priceSum = priceArray.reduce( function (a, b) {
@@ -66,8 +66,8 @@ var filtered = items.filter(pricesArray_14_18);
 
 console.log("Items that cost between $14.00 USD and $18.00 USD:")
 
-filtered.forEach( function (x) {
-	console.log("title: " + x.title);
+filtered.forEach( function (item) {
+	console.log("title: " + item.title);
 });
 
 /*=====================================================================
@@ -97,7 +97,21 @@ Medium Size, Welcome To Our Firepit-Where Friends And Marshmallows Get Toasted A
 Magnetic Wall Mount Bottle Opener Barware Set - Stainless Steel or Black - Personalized if you like! is made of wood.
 Engraved Pocket Knife, Personalized Groomsmen Gift, Ring Bearer Gift, Graduation Gift, 4 Knives is made of wood.
 
-==========================================================================
+Thought process for #4:
+	-wood is under the .materials property
+	-we will also need the .title property for the final answer
+	-I need to create a filter that looks through each object and sees if the .materials property includes "wood"
+	-Once I have that new filtered list, I need to console.log the filteredlist.title
+
+========================================================================*/
+var materialsArray = items.filter( function (item) {
+	return item.materials.indexOf("wood") > -1;
+});
+
+materialsArray.forEach (function (item) {
+ console.log (item.title + " is made of wood.");
+});
+/*========================================================================
 
 Q: Show me how to find which items are made of eight or more materials. Please console.log the ones you find.
 
@@ -128,8 +142,21 @@ etched harry potter glass
 the three broomsticks glass
 personalized harry potter glass
 
-==========================================================================
+Thought Process for #5:
+	-The answer needs a title and materials
+	-Filter the items array so that we get materials and that there are >= 8 materials
+	-console.log the title property and list the materials
+========================================================================*/
+var 8_Materials = items.filter( function(item) {
+	return 
+});
 
+
+
+
+
+
+/*========================================================================
 Q: Show me how to calculate how many items were made by their sellers
 
 A: 18 were made by their sellers
