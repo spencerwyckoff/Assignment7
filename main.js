@@ -29,11 +29,13 @@ var priceSum = priceArray.reduce( function (a, b) {
 
 var priceAvg = priceSum / items.length;
 var priceString = priceAvg.toString();
-var trimmedPrice = priceString.substring(0, 5)
+var trimmedPrice = priceString.substring(0, 5);
 
 console.log("The average price is $" + priceAvg.toFixed(2) + " by using the .toFixed(2) method at the end...");
 
 console.log("The average price is $" + trimmedPrice + " --- only if I convert it to a string first, then use the .substring method to trim it to the first 5 characters.");
+console.log("");
+
 /*=====================================================================
 Q: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 
@@ -69,6 +71,7 @@ console.log("Items that cost between $14.00 USD and $18.00 USD:")
 filtered.forEach( function (item) {
 	console.log("title: " + item.title);
 });
+console.log("");
 
 /*=====================================================================
 Q: Show me how find the item with a "GBP" currency code and print its name and price. Please console.log the one you find.
@@ -87,6 +90,8 @@ var GBP_filtered = items.filter(GBP);
 GBP_filtered.forEach( function (item) {
 	console.log(item.title + " costs " + String.fromCharCode('163') + item.price);
 });
+console.log("");
+
 /*========================================================================
 
 Q: Show me how to find which items are made of wood. Please console.log the ones you find.
@@ -111,6 +116,8 @@ var materialsArray = items.filter(function (item) {
 materialsArray.forEach (function (item) {
  console.log (item.title + " is made of wood.");
 });
+console.log("");
+
 /*========================================================================
 
 Q: Show me how to find which items are made of eight or more materials. Please console.log the ones you find.
@@ -152,9 +159,29 @@ var manyMaterials = items.filter( function (item) {
 		return item.materials.length >= 8;
 });
 
-var logManyMaterials = manyMaterials.forEach (function (item, i, array) {
-	console.log(item.title + " has " + item.materials.length + " materials: " + item.materials);
-});
+	manyMaterials.forEach (function (item, i, array) {
+		console.log(item.title + " has " + item.materials.length + " materials: ");
+
+		item.materials.forEach ( function (item) {
+			console.log(item);
+		});
+	});
+
+console.log("");
+
+
+
+
+// var scripts = new Array();
+// scripts[0] = "PHP";
+// scripts[1] = "ASP";
+// scripts[2] = "JavaScript";
+// scripts[3] = "HTML";
+
+// for (i=0;i<scripts.length;i++)
+// {
+// document.write(scripts[i] + "<br >");
+// }
 /*========================================================================
 Q: Show me how to calculate how many items were made by their sellers
 
@@ -164,13 +191,4 @@ var madeBySeller = items.filter ( function (item) {
 	return item.who_made === "i_did";
 });
 
-console.log(madeBySeller.length + " were made by their sellers")
-
-
-
-
-
-
-
-
-
+console.log(madeBySeller.length + " were made by their sellers");
