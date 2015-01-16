@@ -146,6 +146,7 @@ Thought Process for #5:
 	-The answer needs a title and materials
 	-Filter the items array so that we get materials and that there are >= 8 materials
 	-console.log the title property and list the materials
+	***Is there a way to list items top down?
 ========================================================================*/
 var manyMaterials = items.filter( function (item) {
 		return item.materials.length >= 8;
@@ -154,13 +155,16 @@ var manyMaterials = items.filter( function (item) {
 var logManyMaterials = manyMaterials.forEach (function (item, i, array) {
 	console.log(item.title + " has " + item.materials.length + " materials: " + item.materials);
 });
-
 /*========================================================================
 Q: Show me how to calculate how many items were made by their sellers
 
 A: 18 were made by their sellers
 ========================================================================*/
+var madeBySeller = items.filter ( function (item) {
+	return item.who_made === "i_did";
+});
 
+console.log(madeBySeller.length + " were made by their sellers")
 
 
 
