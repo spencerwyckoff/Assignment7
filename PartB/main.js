@@ -9,6 +9,12 @@ function max(a, b) {
   }
 }
 
+
+//Tim's method
+function max (a, b) {
+  return (a > b) ? a : b;
+}
+
 // ---------------------
 // Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
 // ---------------------
@@ -22,6 +28,33 @@ function maxOfThree(a, b, c) {
     return c;
   }
 }
+
+//Tim's method - reuse your current library
+function maxOfThree(a, b, c) {
+  return max(max(a,b),c);
+}
+
+//INTRO TO SWITCH STATEMENT:
+var myName = "Spencer"
+
+switch (name) {
+
+  case "Bob":
+    console.log("My name is Bob");
+
+  case "Mark":
+    console.log("My name is Mark");
+
+  case "Spencer":
+    console.log("My name is Spencer");
+
+  default:
+    console.log("My name is none of these");
+
+}
+
+
+
 
 // ---------------------
 // Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
